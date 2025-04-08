@@ -57,7 +57,7 @@ inference_fn = make_policy(network_params, deterministic=True)
 key = jax.random.PRNGKey(0)
 
 # Step 2: Test the Policy in MuJoCo with Replicated Model
-def replicate_ant_model(xml_path, num_envs, env_separation, envs_per_row):
+def replicate_ant_model(xml_path, num_envs, env_separation, ens_per_row):
     tree = ET.parse(xml_path)
     root = tree.getroot()
     worldbody = root.find("worldbody")
@@ -98,8 +98,8 @@ def replicate_ant_model(xml_path, num_envs, env_separation, envs_per_row):
     for i in range(1, num_envs):
         new_ant = deepcopy(ant_body)
         new_ant.set("name", f"ant_{i}")
-        row = i // envs_per_row
-        col = i % envs_per_row
+        row = i // ens_per_row
+        col = i % ens_per_row
         x = col * env_separation
         y = row * env_separation
         new_ant.set("pos", f"{x} {y} 0.4")
@@ -123,8 +123,8 @@ def replicate_ant_model(xml_path, num_envs, env_separation, envs_per_row):
 
 num_envs = 6
 env_separation = 2.0
-envs_per_row = 3
-new_xml_path = replicate_ant_model("ant.xml", num_envs, env_separation, envs_per_row)
+ens_per_row = 3
+new_xml_path = replicate_ant_model("ant.xml", num_envs, env_separation, ens_per_row)
 
 model = mujoco.MjModel.from_xml_path(new_xml_path)
 data = mujoco.MjData(model)

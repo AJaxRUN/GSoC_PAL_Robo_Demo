@@ -317,45 +317,45 @@
     <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_2" gear="150" />
     <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_3" gear="150" />
     <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_3" gear="150" />
-  <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_4_1" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_4_1" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_1_1" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_1_1" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_2_1" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_2_1" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_3_1" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_3_1" gear="150" />
-  <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_4_2" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_4_2" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_1_2" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_1_2" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_2_2" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_2_2" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_3_2" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_3_2" gear="150" />
-  <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_4_3" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_4_3" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_1_3" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_1_3" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_2_3" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_2_3" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_3_3" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_3_3" gear="150" />
-  <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_4_4" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_4_4" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_1_4" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_1_4" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_2_4" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_2_4" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_3_4" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_3_4" gear="150" />
-  <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_4_5" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_4_5" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_1_5" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_1_5" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_2_5" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_2_5" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_3_5" gear="150" />
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_3_5" gear="150" />
+  <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_4_1" gear="150" name="hip_4_motor_1" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_4_1" gear="150" name="ankle_4_motor_1" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_1_1" gear="150" name="hip_1_motor_1" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_1_1" gear="150" name="ankle_1_motor_1" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_2_1" gear="150" name="hip_2_motor_1" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_2_1" gear="150" name="ankle_2_motor_1" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_3_1" gear="150" name="hip_3_motor_1" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_3_1" gear="150" name="ankle_3_motor_1" />
+  <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_4_2" gear="150" name="hip_4_motor_2" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_4_2" gear="150" name="ankle_4_motor_2" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_1_2" gear="150" name="hip_1_motor_2" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_1_2" gear="150" name="ankle_1_motor_2" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_2_2" gear="150" name="hip_2_motor_2" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_2_2" gear="150" name="ankle_2_motor_2" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_3_2" gear="150" name="hip_3_motor_2" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_3_2" gear="150" name="ankle_3_motor_2" />
+  <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_4_3" gear="150" name="hip_4_motor_3" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_4_3" gear="150" name="ankle_4_motor_3" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_1_3" gear="150" name="hip_1_motor_3" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_1_3" gear="150" name="ankle_1_motor_3" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_2_3" gear="150" name="hip_2_motor_3" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_2_3" gear="150" name="ankle_2_motor_3" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_3_3" gear="150" name="hip_3_motor_3" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_3_3" gear="150" name="ankle_3_motor_3" />
+  <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_4_4" gear="150" name="hip_4_motor_4" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_4_4" gear="150" name="ankle_4_motor_4" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_1_4" gear="150" name="hip_1_motor_4" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_1_4" gear="150" name="ankle_1_motor_4" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_2_4" gear="150" name="hip_2_motor_4" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_2_4" gear="150" name="ankle_2_motor_4" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_3_4" gear="150" name="hip_3_motor_4" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_3_4" gear="150" name="ankle_3_motor_4" />
+  <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_4_5" gear="150" name="hip_4_motor_5" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_4_5" gear="150" name="ankle_4_motor_5" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_1_5" gear="150" name="hip_1_motor_5" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_1_5" gear="150" name="ankle_1_motor_5" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_2_5" gear="150" name="hip_2_motor_5" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_2_5" gear="150" name="ankle_2_motor_5" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_3_5" gear="150" name="hip_3_motor_5" />
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_3_5" gear="150" name="ankle_3_motor_5" />
   </actuator>
 </mujoco>

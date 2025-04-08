@@ -1,16 +1,41 @@
 import mujoco
 import numpy as np
 from mujoco import viewer
+import jax.numpy as jp
+import jax
+from brax import envs
+from brax.training.agents.ppo import train as ppo
+from brax.training.agents.ppo import networks as ppo_networks
+import os
+from brax.io import model
 import xml.etree.ElementTree as ET
+from part_2.utils import rename_elements
 from copy import deepcopy
 import time
-from utils import rename_elements
 
-# Parameters
-num_envs = 6
-env_separation = 2.0
-ens_per_row = 3
 
+env = envs.create("ant", backend="positional")
+make_inference_fn, params, _  = ppo.train(
+    environment=env,
+    num_timesteps=1000,          
+    num_evals=1,
+    reward_scaling=10,
+    episode_length=100,
+    normalize_observations=True,
+    action_repeat=1,
+    batch_size=32,
+    num_minibatches=4,
+    learning_rate=3e-4,
+    entropy_cost=1e-2,
+    discounting=0.99,
+    unroll_length=5,
+    progress_fn=lambda step, metrics: print(f"Step {step}: {metrics}"),
+    seed=0,
+)
+model.save_params('ant_policy', params)
+print("Training complete. Policy saved.")
+
+# Step 2: Test the Policy in MuJoCo with Replicated Model
 def replicate_ant_model(xml_path, num_envs, env_separation, ens_per_row):
     tree = ET.parse(xml_path)
     root = tree.getroot()
@@ -66,26 +91,47 @@ def replicate_ant_model(xml_path, num_envs, env_separation, ens_per_row):
     return new_xml_path
 
 
+num_envs = 6
+env_separation = 2.0
+ens_per_row = 3
+
 new_xml_path = replicate_ant_model("ant.xml", num_envs, env_separation, ens_per_row)
 
-model = mujoco.MjModel.from_xml_path(new_xml_path)
-data = mujoco.MjData(model)
+# params = model.load_params('ant_policy')
+inference_fn = make_inference_fn(params)
+key = jax.random.PRNGKey(0)
 
-timestep = model.opt.timestep
-print(f"Simulation timestep: {timestep} seconds")
+mj_model = mujoco.MjModel.from_xml_path(new_xml_path)
+data = mujoco.MjData(mj_model)
+timestep = mj_model.opt.timestep
 
-with viewer.launch_passive(model, data) as v:
+def get_obs(data):
+    qpos = data.qpos[7:22]
+    qvel = data.qvel[6:18]
+    obs = np.concatenate([qpos, qvel])
+    return obs
+
+with viewer.launch_passive(mj_model, data) as v:
     start_time = time.time()
     sim_time = 0.0
     for _ in range(10000):
-        action = np.random.uniform(-1, 1, model.nu)
-        data.ctrl[:] = action
-
-        mujoco.mj_step(model, data)
+        obs = get_obs(data)
+        action = inference_fn(jp.array([obs]), key)[0]
+        print("Action:", action)
+        full_action = np.tile(action, num_envs)
+        data.ctrl[:] = full_action
+        
+        mujoco.mj_step(mj_model, data)
         sim_time += timestep
-
+        
         elapsed_time = time.time() - start_time
         sleep_duration = sim_time - elapsed_time
         if sleep_duration > 0:
             time.sleep(sleep_duration)
+        
         v.sync()
+        
+        if data.time > 10:
+            mujoco.mj_resetData(mj_model, data)
+            sim_time = 0.0
+            start_time = time.time()
